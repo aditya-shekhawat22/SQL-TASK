@@ -1,0 +1,5 @@
+SELECT emp_name, salary, dept_id
+FROM emp
+WHERE dept_id NOT IN (3)
+AND emp_name LIKE 'A%'
+ORDER BY salary DESC;
