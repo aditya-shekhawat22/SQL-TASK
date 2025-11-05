@@ -1,0 +1,16 @@
+BEGIN;
+
+-- Insert 3 employees
+INSERT INTO emp (emp_name, salary, dept_id) VALUES ('George', 65000, 2);
+INSERT INTO emp (emp_name, salary, dept_id) VALUES ('Hannah', 72000, 3);
+INSERT INTO emp (emp_name, salary, dept_id) VALUES ('Ian', 58000, 4);
+
+COMMIT;  -- permanently save above inserts
+
+BEGIN;
+
+-- Update salaries
+UPDATE emp SET salary = salary + 5000 WHERE dept_id = 2;
+UPDATE emp SET salary = salary - 2000 WHERE emp_name = 'David';
+
+ROLLBACK;  -- undo the updates, changes not saved
