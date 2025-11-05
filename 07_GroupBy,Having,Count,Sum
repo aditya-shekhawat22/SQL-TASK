@@ -1,0 +1,5 @@
+SELECT d.dept_name, COUNT(e.emp_id) AS total_employees, SUM(e.salary) AS total_salary
+FROM emp e
+JOIN dept d ON e.dept_id = d.dept_id
+GROUP BY d.dept_name
+HAVING COUNT(e.emp_id) > 1;
